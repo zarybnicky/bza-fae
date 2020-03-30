@@ -1,0 +1,3 @@
+body = FallbackTX2
+inputs
+  $tx1/Body/0/Current = ()

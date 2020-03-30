@@ -1,0 +1,111 @@
+cabal-version:       2.2
+name:                fae
+version:             2.0.0.0
+homepage:            https://github.com/Consensys/Fae
+license:             BSD-3-Clause
+author:              Ryan Reich
+maintainer:          ryan.reich@consensys.net
+copyright:           MIT
+category:            none
+build-type:          Simple
+extra-source-files:  README.md
+
+common shared
+  default-language:    Haskell2010
+  ghc-options:        -Wall
+                      -Wcompat
+                      -Wincomplete-uni-patterns
+                      -Wincomplete-record-updates
+                      -Wredundant-constraints
+                      -Wmonomorphism-restriction
+                      -fwarn-tabs
+
+library
+  import: shared
+  hs-source-dirs:      src
+  exposed-modules:
+    Blockchain.Fae
+    Blockchain.Fae.FrontEnd
+    Blockchain.Fae.Internal
+    Blockchain.Fae.Contracts
+    Blockchain.Fae.Currency
+    Blockchain.Fae.Internal.Contract
+    Blockchain.Fae.Internal.Crypto
+    Blockchain.Fae.Internal.Exceptions
+    Blockchain.Fae.Internal.GenericInstances
+    Blockchain.Fae.Internal.IDs
+    Blockchain.Fae.Internal.IDs.Types
+    Blockchain.Fae.Internal.Messages,
+    Blockchain.Fae.Internal.Monitors,
+    Blockchain.Fae.Internal.TXSummary
+    Blockchain.Fae.Internal.Reward
+    Blockchain.Fae.Internal.Serialization
+    Blockchain.Fae.Internal.Storage
+    Blockchain.Fae.Internal.Suspend
+    Blockchain.Fae.Internal.Transaction
+    Blockchain.Fae.Internal.TX
+    Common.JSON
+    Common.Lens
+    Common.ProtocolT
+  build-depends:
+    aeson,
+    base >= 4.10 && < 5,
+    base16-bytestring,
+    bytestring,
+    cereal,
+    containers,
+    cryptonite >= 0.24,
+    deepseq,
+    directory,
+    exceptions,
+    filepath,
+    haskeline,
+    hint,
+    http-client,
+    http-types,
+    lens,
+    lifted-base,
+    megaparsec,
+    memory,
+    mtl,
+    parser-combinators,
+    pretty,
+    process,
+    stm,
+    template-haskell,
+    text,
+    time,
+    transformers,
+    unix,
+    vector,
+    wai,
+    wai-extra,
+    warp,
+    websockets,
+    zlib
+  default-language:    Haskell2010
+  default-extensions:
+    BangPatterns
+    ConstraintKinds
+    DefaultSignatures
+    DeriveGeneric
+    ExistentialQuantification
+    FlexibleContexts
+    FlexibleInstances
+    FunctionalDependencies
+    GeneralizedNewtypeDeriving
+    LambdaCase
+    MultiParamTypeClasses
+    MultiWayIf
+    NamedFieldPuns
+    OverloadedStrings
+    PatternGuards
+    RankNTypes
+    RecordWildCards
+    ScopedTypeVariables
+    StandaloneDeriving
+    TupleSections
+    TypeApplications
+    TypeFamilies
+    TypeFamilyDependencies
+    TypeOperators

@@ -1,0 +1,4 @@
+body = CallDuplicateInputs
+inputs
+  $tx1ID/Body/0/Current = ()
+  $tx1ID/Body/0/Current = ()

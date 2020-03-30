@@ -1,0 +1,6 @@
+body = CallDuplicateInputsOutputs
+inputs
+  $tx2ID/InputCall 0/0/Current = ()
+  $tx2ID/InputCall 0/0/Current = ()
+  $tx2ID/InputCall 0/0/Current = ()
+  $tx2ID/InputCall 0/0/Current = ()

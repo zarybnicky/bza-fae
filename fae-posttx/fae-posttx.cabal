@@ -1,0 +1,107 @@
+cabal-version:       2.2
+name:                fae-posttx
+version:             2.0.0.0
+homepage:            https://github.com/Consensys/Fae
+license:             BSD-3-Clause
+author:              Ryan Reich
+maintainer:          ryan.reich@consensys.net
+copyright:           MIT
+category:            none
+build-type:          Simple
+extra-source-files:  README.md
+
+common shared
+  default-language:    Haskell2010
+  ghc-options:        -Wall
+                      -Wcompat
+                      -Wincomplete-uni-patterns
+                      -Wincomplete-record-updates
+                      -Wredundant-constraints
+                      -Wmonomorphism-restriction
+                      -fwarn-tabs
+
+
+executable postTX
+  import: shared
+  hs-source-dirs:      bin
+  main-is:             postTX.hs
+  build-depends:       base, fae-posttx
+  default-language:    Haskell2010
+
+library
+  import: shared
+  hs-source-dirs: src
+  exposed-modules:
+    PostTX
+    PostTX.Args
+    PostTX.Faeth
+    PostTX.ImportExport
+    PostTX.Keys
+    PostTX.Network
+    PostTX.Parser
+    PostTX.Submit
+    PostTX.TXSpec
+    PostTX.View
+  build-depends:
+    aeson,
+    base >= 4.10 && < 5,
+    base16-bytestring,
+    bytestring,
+    cereal,
+    containers,
+    cryptonite >= 0.24,
+    deepseq,
+    directory,
+    exceptions,
+    fae,
+    filepath,
+    haskeline,
+    hint,
+    http-client,
+    http-types,
+    lens,
+    lifted-base,
+    megaparsec,
+    memory,
+    mtl,
+    parser-combinators,
+    pretty,
+    process,
+    stm,
+    template-haskell,
+    text,
+    time,
+    transformers,
+    unix,
+    vector,
+    wai,
+    wai-extra,
+    warp,
+    websockets,
+    zlib
+  default-language:    Haskell2010
+  default-extensions:
+    BangPatterns
+    ConstraintKinds
+    DefaultSignatures
+    DeriveGeneric
+    ExistentialQuantification
+    FlexibleContexts
+    FlexibleInstances
+    FunctionalDependencies
+    GeneralizedNewtypeDeriving
+    LambdaCase
+    MultiParamTypeClasses
+    MultiWayIf
+    NamedFieldPuns
+    OverloadedStrings
+    PatternGuards
+    RankNTypes
+    RecordWildCards
+    ScopedTypeVariables
+    StandaloneDeriving
+    TupleSections
+    TypeApplications
+    TypeFamilies
+    TypeFamilyDependencies
+    TypeOperators
